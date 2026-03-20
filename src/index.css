@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0f172a;
+  --color-surface: #1e293b;
+  --color-primary: #10b981;
+  --color-secondary: #64748b;
+  --color-accent: #3b82f6;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-success: #10b981;
+
+  --font-sans: Inter, sans-serif;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Custom Utilities (now standard CSS) */
+@utility glass-panel {
+  @apply bg-surface/50 backdrop-blur-md border border-white/10 shadow-lg;
+}
+
+@utility btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2;
+}
+
+@utility btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-500/20;
+}
+
+@utility btn-outline {
+  @apply border border-white/20 hover:bg-white/5 text-slate-300 hover:text-white;
+}
+
+@utility input-field {
+  @apply w-full bg-slate-900/50 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 transition-all;
+}
+
+/* Base Styles */
+@layer base {
+
+  html,
+  body {
+    @apply h-full w-full;
+  }
+
+  body {
+    @apply bg-background text-white antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
